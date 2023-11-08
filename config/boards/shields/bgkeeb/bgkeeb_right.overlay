@@ -1,0 +1,18 @@
+#include "bgkeeb.dtsi" // Notice that the main dtsi files are included in the overlay.
+
+&default_transform { // The matrix transform for this board is 5 columns over because the left half is 5 columns wide according to the matrix.
+    col-offset = <5>;
+};
+
+&kscan0 {
+    // #define MATRIX_ROW_PINS { F6, D7, B3, E6 }     == { 19, 6, 14, 7 }
+    // #define MATRIX_COL_PINS { F4, D4, F5, B1, B2 } == { 21, 4, 20, 15, 16 }
+    // columns reversed
+    col-gpios
+        = <&pro_micro 16 GPIO_ACTIVE_HIGH> // col1 in the schematic
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // col2 in the schematic
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // col3 in the schematic
+        , <&pro_micro 4 GPIO_ACTIVE_HIGH> // col4 in the schematic
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH> // col5 in the schematic
+        ;
+};
