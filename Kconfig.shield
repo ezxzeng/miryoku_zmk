@@ -1,0 +1,5 @@
+config SHIELD_MY_BOARD_LEFT
+    def_bool $(shields_list_contains,bgkeeb_left)
+
+config SHIELD_MY_BOARD_RIGHT
+    def_bool $(shields_list_contains,bgkeeb_right)
